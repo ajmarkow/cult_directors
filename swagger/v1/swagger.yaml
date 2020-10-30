@@ -4,13 +4,58 @@ info:
   title: API V1
   version: v1
 paths:
-  "/director":
+  "/directors":
     post:
       summary: Adds a director to database
       parameters: []
       responses:
         '200':
           description: Director Sucessfully Added
+          content: {}
+        '400':
+          description: Invalid Request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: String
+                birthday:
+                  type: Date
+                summary:
+                  type: String
+                movies:
+                  type: Array
+              required:
+              - name
+              - birthday
+              - summary
+          application/xml:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: String
+                birthday:
+                  type: Date
+                summary:
+                  type: String
+                movies:
+                  type: Array
+              required:
+              - name
+              - birthday
+              - summary
+  "/directors/id":
+    put:
+      summary: Updates a director  in our database
+      parameters: []
+      responses:
+        '200':
+          description: Director Sucessfully Updated
           content: {}
         '400':
           description: Invalid Request

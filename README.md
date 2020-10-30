@@ -12,13 +12,44 @@ By **AJ Markow**
 
 ## Setup/Installation Requirements
 
-{Setup Requirements}
+- Git clone full repository
+
+- Run rake db: create and Rake db:migrate to set up database backing models.
+
+- Run rails s to launch server at URL/Port localhost:3000.
+
+## API Actions
+
+The following endpoints are available:
+
+/directors
+
+To this endpoint you can make the following request types with this list of parameters:
+
+GET -> Returns an index of all directors
+
+POST -> Adds a new director to the database.
+
+    Parameters Needed
+    name - as a string .  Should be the director's full name.
+    birthday - in YYYY-MM-DD format. This can be updated later on if it is initially entered incorrectly.
+    summary - as a string.  Goes over
+
+/director
+
+PUT -> Updates a specific director's entry in the application.
+
+Returns JSON about a director, including Name, Birthday, List of Movies, and Summary about them.
+
+DELETE -> Removes/destroys a director's entry from the application model and database.
 
 ## API Docs
 
+Accessible at https://localhost:3000/api-docs
+
 ## Known Bugs
 
-{Known Bugs}
+Some integration specs are not currently passing as of most recent commit on 10/30/2020, but otherwise, no known bugs with the API at this time
 
 ## API URL
 
