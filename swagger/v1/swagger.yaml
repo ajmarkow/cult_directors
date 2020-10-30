@@ -1,0 +1,56 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/director":
+    post:
+      summary: Adds a director to database
+      parameters: []
+      responses:
+        '200':
+          description: Director Sucessfully Added
+          content: {}
+        '400':
+          description: Invalid Request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: String
+                birthday:
+                  type: Date
+                summary:
+                  type: String
+                movies:
+                  type: Array
+              required:
+              - name
+              - birthday
+              - summary
+          application/xml:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: String
+                birthday:
+                  type: Date
+                summary:
+                  type: String
+                movies:
+                  type: Array
+              required:
+              - name
+              - birthday
+              - summary
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

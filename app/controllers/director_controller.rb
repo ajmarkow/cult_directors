@@ -10,8 +10,18 @@ class DirectorController < ApplicationController
   end
 
   def create
-    @director = Director.create(director_params)
+    @director = Director.create!(director_params)
     json_response(@director)
+  end
+
+  def update
+    @director = Director.find(params[:id])
+    @director.update(director_params)
+  end
+
+  def destroy
+    @director = Director.find(params[:id])
+    @director.destroy
   end
 
   private
