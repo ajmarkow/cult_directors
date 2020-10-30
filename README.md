@@ -8,7 +8,7 @@ By **AJ Markow**
 
 ## Description
 
-{Description}
+An API which allows users to add directors to a rails database, and read, update, and delete records about those directors. Directors will eventually have facts associated with them, but for the current time, just movies are associated with directors. Facts will be associated with both movies and directors.
 
 ## Setup/Installation Requirements
 
@@ -39,9 +39,30 @@ POST -> Adds a new director to the database.
 
 PUT -> Updates a specific director's entry in the application.
 
-Returns JSON about a director, including Name, Birthday, List of Movies, and Summary about them.
+Get -> Returns JSON about a specific director, including Name, Birthday, List of Movies, and Summary about them.
 
 DELETE -> Removes/destroys a director's entry from the application model and database.
+
+/movies
+
+To this endpoint you can make the following request types with this list of parameters:
+
+GET -> Returns an index of all movies
+
+POST -> Adds a new movie to the database.
+
+    Parameters Needed
+    title - as a string .  Should be the movie's full name.
+    Year-released - in YYYY-MM-DD format. This can be updated later on if it is initially entered incorrectly.
+    summary - as a string.  Explains basic plot of movie, thinks that make it unique or a cult classic.
+
+/movie
+
+PUT -> Updates a specific movie's entry in the application.
+
+Get -> Returns JSON about a selected movie, including Title, Year Released, A Summary, and a Director ID.
+
+DELETE -> Removes/destroys a movie's entry from the application model and database.
 
 ## API Docs
 
