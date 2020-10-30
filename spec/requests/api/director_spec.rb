@@ -1,6 +1,6 @@
 require "swagger_helper"
 describe "Directors API" do
-  path "/director" do
+  path "/directors" do
     post "Adds a director to database" do
       consumes "application/json", "application/xml"
       parameter name: :director, in: :body, schema: {
@@ -29,7 +29,7 @@ describe "Directors API" do
       end
     end
   end
-  path "/director/:id" do
+  path "/directors/id" do
     put "Updates a director  in our database" do
       consumes "application/json", "application/xml"
       parameter name: :director, in: :body, schema: {
@@ -43,17 +43,18 @@ describe "Directors API" do
                   required: ["name", "birthday", "summary"],
                 }
 
-      response "200", "Director Sucessfully Added" do
+      response "200", "Director Sucessfully Updated" do
         let (:director) {
           { name: "Stanley Kubrick",
             birthday: "1928-07-26",
             summary: "American director best known for directing 2001 A Space Odyssey" }
+          id = 1
         }
         run_test!
       end
 
       response "400", "Invalid Request" do
-        let(:director) { { name: "Stanley Kubrick" } }
+        let(:director) { { name: "Bob" } }
         run_test!
       end
     end

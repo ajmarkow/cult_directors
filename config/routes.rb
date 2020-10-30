@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   mount Rswag::Ui::Engine => "/api-docs"
   mount Rswag::Api::Engine => "/api-docs"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :director do
-    resources :movie
+  namespace :v1 do
+    resources :directors do
+      resources :movies
+    end
+    resources :facts
   end
-  resources :facts
 end
