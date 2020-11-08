@@ -43,7 +43,9 @@ Get -> Returns JSON about a specific director, including Name, Birthday, List of
 
 DELETE -> Removes/destroys a director's entry from the application model and database.
 
-/movies
+- Movies endpoint is a work in progress. Not functional as of 11/8/2020.
+
+~~/movies
 
 To this endpoint you can make the following request types with this list of parameters:
 
@@ -62,7 +64,7 @@ PUT -> Updates a specific movie's entry in the application.
 
 Get -> Returns JSON about a selected movie, including Title, Year Released, A Summary, and a Director ID.
 
-DELETE -> Removes/destroys a movie's entry from the application model and database.
+DELETE -> Removes/destroys a movie's entry from the application model and database.~~
 
 ## API Docs
 
