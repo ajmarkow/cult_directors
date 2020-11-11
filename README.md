@@ -39,13 +39,20 @@ POST -> Adds a new director to the database.
 
 PUT -> Updates a specific director's entry in the application.
 
-Get -> Returns JSON about a specific director, including Name, Birthday, List of Movies, and Summary about them.
+To make a successful put request to the API, at least one of the following parameters must have a value provided to update as a parameter for the PUT request to the API.  Otherwise the put request will fail. 
+
+    Parameters Needed:
+    name - as a string .  Should be the director's full name.
+    birthday - in YYYY-MM-DD format. This can be updated later on if it is initially entered incorrectly.
+    summary - as a string.  Goes over
+
+Get (director/:id) -> Returns JSON about a specific director, including Name, Birthday, List of Movies, and Summary about them. ID must be provided as a parameter to the get request.
 
 DELETE -> Removes/destroys a director's entry from the application model and database.
 
 ## Work in Progress
 
-- Movie endpoint for a given director, as well as the movies endpoint are not yet functional. Those Aspects of the API are a work in progress. Planned functionality will be as listed below:
+- **Movie endpoint for a given director, as well as the movies endpoint are not yet functional. Those Aspects of the API are a work in progress. Planned functionality will be as listed below:**
 
 /movies
 
@@ -64,13 +71,14 @@ POST -> Adds a new movie to the database.
 
 PUT -> Updates a specific movie's entry in the application.
 
-To make a successful put request to the API, at least one of the following attributes must have a value provided as a parameter for the PUT request to the API:
+To make a successful put request to the API, at least one of the following attributes must have a value provided as a parameter for the PUT request to the API.  Otherwise the put request will fail. 
 
-    name - as a string .
-    birthday - in YYYY-MM-DD format.
-    summary - as a string.
+    Parameters Needed
+    title - as a string .  Should be the movie's full name.
+    Year-released - in YYYY-MM-DD format. This can be updated later on if it is initially entered incorrectly.
+    summary - as a string.  Explains basic plot of movie, thinks that make it unique or a cult classic.
 
-Get -> Returns JSON about a selected movie, including Title, Year Released, A Summary, and a Director ID.
+l Get -> Returns JSON about a selected movie, including Title, Year Released, A Summary, and a Director ID.
 
 DELETE -> Removes/destroys a movie's entry from the application model and database.
 
