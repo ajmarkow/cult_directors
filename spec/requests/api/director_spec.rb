@@ -15,7 +15,7 @@ describe "Directors API" do
       }
 
       response "200", "Director Sucessfully Added" do
-        let (:director) {
+        let(:director) {
           { name: "Stanley Kubrick",
             birthday: "1928-07-26",
             summary: "American director best known for directing 2001 A Space Odyssey" }
@@ -44,7 +44,7 @@ describe "Directors API" do
                 }
 
       response "200", "Director Sucessfully Updated" do
-        let (:director) {
+        let(:director) {
           { name: "Stanley Kubrick",
             birthday: "1928-07-26",
             summary: "American director best known for directing 2001 A Space Odyssey" }
